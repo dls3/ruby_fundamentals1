@@ -32,4 +32,4 @@ puts "1. Hello\n2. World"
 
 (1 != 2) || (2 < 3) #true
 
-puts (1 == 2) || (2 == 3) #false
+(1 == 2) || (2 == 3) #false
