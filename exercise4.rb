@@ -8,6 +8,7 @@
 
 (1..100).each do |num|
   puts case
+  when num%3 == 0 && num%5 == 0 then "BitMaker"
     when num%3 == 0 then "Bit"
     when num%5 == 0 then "Maker"
     else num
