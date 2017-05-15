@@ -15,32 +15,41 @@
 # You can press CTRL-C to end your program if it keeps asking you for input.
 #
 #
-puts "walk or run?"
-add = gets.chomp
-# distance = distance.to_i
-
 distance = 0
+energy = 10
 
-#Running it once
-# if add == ("walk")  # || "Walk")
-#   distance = distance + 1
-#   puts "Distance from home is #{distance}"
-# elsif add == ("run")  # || "Run")
-#   distance = distance + 5
-#   puts "Distance from home is #{distance} km."
-# end
+while true
+  puts "'Walk','run', or 'rest'? Enter 'go home' to stop."
+  puts "\n"
+  input = gets.chomp.downcase
 
+  if energy <= 0 then
+    puts "You have no more energy. Time to go home"
+    break
 
-while add = gets.chomp
-case add
-  when "walk" || "Walk"
-    distance = distance + 1
-    puts "Distance from home is #{distance}"
-  when "run" || "Run"
-    distance = distance + 5
-    puts "Distance from home is #{distance}"
-  else
-    distance = distance
-    puts "Enter etiher walk or run"
+  elsif
+    case input
+    when "walk"
+      distance += 1
+      energy += 1
+      puts "Distance from home is #{distance} km"
+      puts "Energy is at #{energy} coffees"
+      puts "\n"
+    when "run"
+      distance +=  5
+      energy -= 3
+      puts "Distance from home is #{distance} km"
+      puts "Energy is at #{energy} coffees"
+      puts "\n"
+    when "rest"
+      energy +=3
+      puts "Time to nap! Energy is up to #{energy} coffees"
+    when "go home"
+      puts "Going home. You walked #{distance} km and have #{energy} coffees"
+      break
+    else
+      puts "Enter etiher 'walk' or 'run'. Enter 'go home' to stop"
+      puts "\n"
+    end
   end
 end
